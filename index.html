@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>بلاغة 12 — شرح تفاعلي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f5fa;--cd:#fff;--tx:#1d2342;--mu:#5d668c;--ac:#4b5bd6;--ts:#e8ebff;--tq:#168f84;--go:#a8640f;--bd:#c9cfee;--ok:#e6f6f3;--er:#fdeeed;--c0:#dfe4ff;--c1:#d5f3ee;--c2:#fff0cc;--c3:#fbdcea;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1530;--cd:#19214a;--tx:#eef0ff;--mu:#a9b2da;--ac:#8d9bff;--ts:#252f66;--tq:#4fd1c3;--go:#f2c14e;--bd:#37427e;--ok:#12343a;--er:#3a2231;--c0:#2c3a7a;--c1:#14504d;--c2:#5a4514;--c3:#5a2444;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#0f1530;--cd:#19214a;--tx:#eef0ff;--mu:#a9b2da;--ac:#8d9bff;--ts:#252f66;--tq:#4fd1c3;--go:#f2c14e;--bd:#37427e;--ok:#12343a;--er:#3a2231;--c0:#2c3a7a;--c1:#14504d;--c2:#5a4514;--c3:#5a2444;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Cairo,Tajawal,Tahoma,sans-serif;line-height:1.9;font-size:17px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--cd);z-index:10}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--cd);border-bottom:1px solid var(--bd);display:flex;gap:6px;align-items:center;padding:6px 10px}
+nav{display:flex;gap:6px;overflow-x:auto;flex:1;scrollbar-width:none}
+button{font:inherit;color:inherit;cursor:pointer;border:1px solid var(--bd);background:var(--cd);border-radius:12px;padding:4px 14px;white-space:nowrap}
+button:focus-visible,summary:focus-visible{outline:3px solid var(--ac)}
+nav .on{background:var(--ac);color:#fff;border-color:var(--ac)}
+main{max-width:820px;margin:auto;padding:16px 14px 60px}
+h1{font-size:2rem;margin:.3em 0;font-weight:800}h3{margin:.2em 0}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:18px;padding:14px 18px;margin:14px 0}
+.pill{background:var(--ts);color:var(--ac);border-radius:20px;padding:2px 12px;font-size:.85rem}
+.hero{text-align:center;padding:26px 0 8px}.hero h1{font-size:3.2rem;color:var(--ac)}.hero p{color:var(--mu)}
+.g{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.g button{padding:12px;text-align:right;border-radius:16px}.g small{display:block;color:var(--mu)}
+.tree{text-align:center}.rt{display:inline-block;background:var(--ac);color:#fff;border-radius:12px;padding:4px 20px;font-weight:800}
+.st{width:2px;height:14px;background:var(--bd);margin:0 auto}
+.kids{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:14px;position:relative}
+.kids::before{content:"";position:absolute;top:-8px;left:12%;right:12%;border-top:2px solid var(--bd)}
+.nd{background:var(--ts);border:2px solid transparent;border-radius:14px;padding:6px 14px;min-width:120px;font-weight:600}
+.nd small{display:block;font-size:.78rem;color:var(--mu);font-weight:400;line-height:1.5}
+.nd.on{border-color:var(--ac);background:var(--cd)}
+.panel{margin-top:14px;border-top:2px dashed var(--bd);padding-top:10px}
+.ex{font-size:1.3rem;line-height:2.3}
+.pt{cursor:pointer;border-radius:8px;padding:2px 5px;border-bottom:3px solid var(--ac)}
+.c0{background:var(--c0)}.c1{background:var(--c1)}.c2{background:var(--c2)}.c3{background:var(--c3)}
+.pt.on{outline:2px solid var(--tx)}
+.role{background:var(--ts);border-radius:12px;padding:4px 12px;color:var(--mu);font-size:.95rem;min-height:2.2em}
+details{border-radius:16px;padding:6px 16px;margin:12px 0}
+summary{cursor:pointer;font-weight:700}
+.tip{background:var(--ok);border:1px solid var(--tq)}.err{background:var(--er);border:1px solid #d98a85}
+table{width:100%;border-collapse:collapse;font-size:.95rem}th{background:var(--ac);color:#fff}
+th,td{border:1px solid var(--bd);padding:6px 10px;text-align:right}td:first-child{font-weight:700;color:var(--go)}
+.nv{display:flex;justify-content:space-between;margin-top:20px}
+.ov{overflow-x:auto}
+@media(prefers-reduced-motion:no-preference){.panel{animation:f .25s}@keyframes f{from{opacity:0;transform:translateY(6px)}}}
+</style></head><body>
+<header><nav id="nv"></nav><button id="th" aria-label="تبديل المظهر">◐</button></header>
+<main id="m"></main>
+<script>
+const X0=[['العلمُ','مشبّه'],[' كـ','أداة'],['النورِ','مشبّه به'],[' في الهداية','وجه الشبه']];
+const CMP1={t:'مقارنة: السجع والجناس',h:['','الجناس','السجع'],r:[['أين يقع؟','في أي موضع من الكلام','في أواخر الجمل'],['المتشابه','لفظان متشابهان ومعناهما مختلف','حرف الفاصلة أو نغمتها'],['مجاله','نثر وشعر','النثر']]};
+const CMP2={t:'مقارنة: الطباق والمقابلة',h:['','الطباق','المقابلة'],r:[['عدد الأضداد','لفظان متضادان','معنيان فأكثر وما يقابلها'],['الترتيب','لا يُشترط','يُشترط: الأول بالأول والثاني بالثاني'],['مثال','أيقاظًا / رقود','يضحكوا قليلًا / يبكوا كثيرًا']]};
+const T=[
+{t:'التشبيه',c:'صورة بيانية',d:'عقد مقارنة بين طرفين يشتركان في صفة، بأداة ظاهرة أو مقدّرة، لتقريب الصورة وتوضيح المعنى.',x:X0,
+n:[{n:'تام',s:'الأركان الأربعة مذكورة',d:'تُذكر المشبّه والمشبّه به والأداة ووجه الشبه.',x:X0},
+{n:'ناقص',s:'حُذف وجه الشبه أو الأداة',d:'يُحذف وجه الشبه وتبقى الأداة، أو تُحذف الأداة ويبقى وجه الشبه (العلم نور في هدايته).',x:[['الجندي','مشبّه'],[' كـ','أداة'],['الأسد','مشبّه به']],a:'حُذف وجه الشبه (الشجاعة). ومثله: الفتاة كالقمر.'},
+{n:'بليغ',s:'حُذفت الأداة ووجه الشبه',d:'يبقى الطرفان فقط، وهو أقوى أنواع التشبيه لأنه يجعل المشبّه هو المشبّه به. وبعض المقررات تعدّه من الناقص.',x:[['العلمُ','مشبّه'],[' نورٌ','مشبّه به']]},
+{n:'تمثيلي',s:'تشبيه صورة بصورة',d:'كلٌّ من الطرفين صورة مركّبة لا لفظ مفرد. وغالبًا تتوسطهما أداة قبل الصورة الثانية، وليست شرطًا، لكنها أسرع علامة للتمييز.',x:[['مَثَلُ الَّذِينَ حُمِّلُوا التَّوْرَاةَ ثُمَّ لَمْ يَحْمِلُوهَا','الصورة الأولى: حال من كُلّف بالتوراة ولم يعمل بها'],[' كَمَثَلِ','الأداة بين الصورتين وقبل الثانية'],[' الْحِمَارِ يَحْمِلُ أَسْفَارًا','الصورة الثانية: حمل ما فيه نفع دون انتفاع']],a:'الجمعة: ٥. وجه الشبه مأخوذ من الصورة كلها لا من كلمة واحدة.'},
+{n:'ضمني',s:'صورة والدليل أو الحقيقة بعدها',d:'لا يُصرَّح فيه بأداة ولا صيغة تشبيه؛ تأتي صورة (دعوى) ثم يعقبها دليل أو حقيقة تؤيدها وتقرّب فهمها.',x:[['مَنْ يَهُنْ يَسْهُلِ الهَوانُ عَلَيهِ','الصورة: من اعتاد الهوان لا يتألم له'],[' *** ',''],['ما لِجُرحٍ بِمَيِّتٍ إيلامُ','الدليل والحقيقة: الميت لا يتألم بجرحه']],a:'المتنبي. شُبّه من اعتاد الهوان بالميت، ولم يقل «كالميت».'}],
+tip:'عدّ الأركان: أربعة = تام. غاب وجه الشبه أو الأداة = ناقص. غابا معًا = بليغ. صورة تُشبَّه بصورة وتتوسطهما أداة غالبًا = تمثيلي. صورة يعقبها دليل أو حقيقة بلا أداة = ضمني.',e:'عدّ «العلم نور» استعارة؛ طرفاه مذكوران فهو تشبيه بليغ. وعدّ «العلم كالنور» تمثيليًا؛ طرفاه مفردان فهو تام.'},
+{t:'الاستعارة',c:'صورة بيانية',d:'استعمال اللفظ في غير معناه الأصلي لعلاقة المشابهة، مع قرينة تمنع إرادة المعنى الحقيقي. وهي تشبيه حُذف أحد طرفيه.',
+n:[{n:'تصريحية',s:'ذُكر المشبّه به',d:'حُذف المشبّه وصُرّح بالمشبّه به.',x:[['رأيتُ',''],[' أسدًا','المشبّه به مذكور (المراد رجل شجاع)'],[' يخطب في الناس','القرينة']],a:'ومثله: رأيتُ بدرًا يمشي في الحديقة (المراد فتاة جميلة).'},
+{n:'مكنية',s:'حُذف المشبّه به وبقي لازمه',d:'حُذف المشبّه به ورُمز له بشيء من لوازمه.',x:[['ابتسمَ','لازم المشبّه به (الإنسان محذوف)'],[' الصباحُ','المشبّه']],a:'شُبّه الصباح بإنسان. ومثله: أنشبت المنيّةُ أظفارها (شُبّهت المنية بوحش).'}],
+tip:'ابحث عن كلمة لا تصح على حقيقتها (الصباح لا يبتسم). ثم اسأل: هل ذُكر المشبّه به؟ نعم = تصريحية. لا، بل ذُكر لازمه = مكنية.',e:'الخلط بينها وبين الكناية: الاستعارة علاقتها المشابهة ولا يصح فيها المعنى الأصلي.'},
+{t:'الكناية',c:'صورة بيانية',d:'لفظ أُطلق وأُريد به معنى ملازم له، مع جواز إرادة المعنى الأصلي بحسب السياق.',
+n:[{n:'عن صفة',s:'المكنّى عنه صفة',d:'كثرة الرماد تلزمها كثرة الطبخ والضيوف، فالمراد الكرم. ومثله: طويل النجاد (طول القامة).',x:[['فلان',''],[' كثير الرماد','اللازم: الكرم']]},
+{n:'عن موصوف',s:'يُذكر ما يدل عليه دون اسمه',d:'الضاد حرف تنفرد به العربية. ومثله: أرض الكنانة (مصر).',x:[['لغةُ الضاد','المراد: اللغة العربية']]},
+{n:'عن نسبة',s:'نسبة الصفة لما يتصل بالموصوف',d:'نُسب المجد إلى ثوبيه، والمراد إثباته لصاحبهما.',x:[['المجدُ','الصفة'],[' بين ثوبيه','ما اتصل بالموصوف']]}],
+tip:'اسأل: ما المعنى اللازم الذي ينتقل إليه ذهني؟ ثم: هل المكنّى عنه صفة، أم موصوف (اسم)، أم نسبة صفة إلى شيء متصل بصاحبها؟',e:'ظنّ أن المعنى الأصلي مستحيل دائمًا؛ قد يكون كثير الرماد فعلًا، لكن المقصود هو اللازم.'},
+{t:'الجناس',c:'محسّن لفظي',d:'تشابه لفظين في النطق مع اختلافهما في المعنى. يتفقان في: نوع الحروف، وعددها، وهيئتها (الحركات)، وترتيبها.',cmp:CMP1,
+n:[{n:'تام',s:'اتفقا في الأمور الأربعة',d:'لفظان متطابقان ومعناهما مختلف.',x:[['ويوم تقوم ',''],['الساعةُ','القيامة'],[' يُقسم المجرمون ما لبثوا غيرَ ',''],['ساعةٍ','المدة القصيرة']],a:'الروم.'},
+{n:'ناقص',s:'اختلفا في واحد أو أكثر',d:'اختر نوع الاختلاف:',k:[
+{n:'في الهيئة',x:[['لبس ',''],['البُرد','الثوب'],[' في ',''],['البَرد','ضد الحر']],a:'اختلفا في حركة الباء (مثال تعليمي).'},
+{n:'في العدد',x:[['والتفّتِ ',''],['السَّاقُ','عضو'],[' بالسَّاقِ إلى ربك يومئذٍ ',''],['المَساقُ','السَّوق']],a:'القيامة: زاد الثاني حرف الميم.'},
+{n:'في نوع الحرف',x:[['بما كنتم ',''],['تفرحون','الفاء'],[' ... وبما كنتم ',''],['تمرحون','الميم']],a:'غافر: اختلفا في حرف واحد.'}]}],
+tip:'ابحث عن كلمتين متشابهتين في النطق ومختلفتين في المعنى. تطابقتا تمامًا = تام. اختلفت حركة أو زاد حرف أو تغيّر حرف = ناقص.',e:'الخلط بينه وبين السجع: الجناس في تشابه لفظين داخل الكلام، والسجع في توافق أواخر الجمل.'},
+{t:'السجع',c:'محسّن لفظي',d:'توافق أواخر الجمل (الفواصل) في الحرف الأخير أو النغمة في النثر.',cmp:CMP1,
+n:[{n:'مجاله',s:'النثر لا الشعر',d:'قافية البيت الشعري ليست سجعًا.'},
+{n:'شرطه',s:'جملتان فأكثر',d:'تتفق نهايتا الجملتين في الحرف أو النغمة.',x:[['العلم يرفع ',''],['المقام','فاصلة'],['، والجهل يورث ',''],['الندام','فاصلة توافقت مع الأولى']],a:'مثال تعليمي.'},
+{n:'أثره',s:'إيقاع وتقوية للمعنى',d:'نغمة موسيقية محببة تقوّي المعنى.',x:[['من جدّ ',''],['وجد','فاصلة (دال)'],['، ومن زرع ',''],['حصد','فاصلة (دال)']],a:'مثل مشهور.'}],
+tip:'انظر آخر كل جملة في النثر: إن اتفقت الأواخر في الحرف أو الإيقاع فهو سجع.',e:'عدّ قافية الشعر سجعًا. القافية شيء، والسجع خاص بالنثر.'},
+{t:'الطباق',c:'محسّن معنوي',d:'الجمع بين الشيء وضده في الكلام.',cmp:CMP2,
+n:[{n:'إيجابي',s:'الضدان لم يختلفا بالإثبات والنفي',d:'كلا الضدين مثبت.',x:[['وتحسبهم ',''],['أيقاظًا','ضد'],[' وهم ',''],['رقود','ضد']],a:'الكهف.'},
+{n:'سلبي',s:'اختلفا بالإثبات والنفي',d:'يأتي اللفظ نفسه مثبتًا ومنفيًا (أو بالأمر والنهي).',x:[['لا يستوي الذين ',''],['يعلمون','مثبت'],[' والذين ',''],['لا يعلمون','منفي']],a:'الزمر.'}],
+tip:'ابحث عن كلمتين متضادتين. اتفقتا في الإثبات = إيجابي. جاءت إحداهما منفية بنفس اللفظ = سلبي.',e:'وصف الأضداد المتعددة المرتبة بأنها طباق؛ فهي مقابلة إن جاءت أزواجها على الترتيب.'},
+{t:'المقابلة',c:'محسّن معنوي',d:'الإتيان بمعنيين أو أكثر، ثم الإتيان بما يقابلها على الترتيب: الأول بالأول والثاني بالثاني.',cmp:CMP2,
+n:[{n:'مثال التوبة',s:'يضحكوا / يبكوا',d:'اضغط على كل كلمة لترى ما يقابلها.',x:[['فليضحكوا','يقابل «وليبكوا»'],[' قليلًا','يقابل «كثيرًا»'],[' وليبكوا','يقابل «فليضحكوا»'],[' كثيرًا','يقابل «قليلًا»']],a:'التوبة. بالترتيب نفسه.'},
+{n:'مثال الأعراف',s:'يحلّ / يحرّم',d:'معنيان وما يقابلهما.',x:[['يُحِلُّ','يقابل «يُحَرِّمُ»'],[' لهم ',''],['الطَّيِّبَاتِ','تقابل «الخبائث»'],[' ويُحَرِّمُ','يقابل «يُحِلُّ»'],[' عليهم ',''],['الْخَبَائِثَ','تقابل «الطيبات»']],a:'الأعراف.'}],
+tip:'زوجان متقابلان فأكثر مرتبان = مقابلة. ضد واحد = طباق.',e:'إهمال الترتيب؛ فمن دونه لا تتحقق المقابلة.'}];
+const REV=[['التشبيه','طرفان وأداة أو تقدير','العلم كالنور في الهداية'],['الاستعارة','طرف محذوف وقرينة','ابتسم الصباح'],['الكناية','لفظ يُراد به لازمه','كثير الرماد'],['الجناس','لفظان متشابهان ومعناهما مختلف','الساعة / ساعة'],['السجع','توافق أواخر الجمل في النثر','المقام / الندام'],['الطباق','ضدّان','أيقاظًا / رقود'],['المقابلة','أزواج متقابلة بالترتيب','يضحكوا قليلًا / يبكوا كثيرًا']];
+const $=s=>document.querySelector(s),M=$('#m');let ci=-1,cn=null;
+const ex=x=>`<div class="exw"><div class="ex">${x.map((p,i)=>p[1]?`<span class="pt c${i%4}" tabindex="0" data-r="${p[1]}">${p[0]}</span>`:p[0]).join('')}</div><div class="role">اضغط على جزء من المثال لمعرفة دوره</div></div>`;
+const kids=(a,at)=>`<div class="st"></div><div class="kids">${a.map((k,j)=>`<button class="nd" ${at}="${j}">${k.n}${k.s?`<small>${k.s}</small>`:''}</button>`).join('')}</div>`;
+const det=(c,t,b)=>`<details class="${c}" open><summary>${t}</summary><p>${b}</p></details>`;
+function nodeHtml(k){return`<h3>${k.n}</h3><p>${k.d||''}</p>${k.x?ex(k.x):''}${k.a?`<p>${k.a}</p>`:''}${k.k?kids(k.k,'data-q'):''}<div id="sub"></div>`}
+function tabs(){$('#nv').innerHTML=['الرئيسية',...T.map(o=>o.t),'المراجعة'].map((t,i)=>`<button data-g="${i-1}" class="${i-1==ci?'on':''}">${t}</button>`).join('')}
+function go(i){ci=i;cn=null;tabs();let h='';
+if(i<0)h=`<div class="hero"><h1>بلاغة 12</h1><p>شرح تفاعلي للصور البيانية والمحسنات البديعية. اضغط على أي فن، ثم على أنواعه، ثم على أجزاء الأمثلة.</p></div><div class="card"><h3>الصور البيانية</h3><div class="g">${T.slice(0,3).map((o,j)=>`<button data-g="${j}">${o.t}<small>${o.n.length} أنواع</small></button>`).join('')}</div></div><div class="card"><h3>المحسنات البديعية</h3><p class="role">لفظية: الجناس والسجع. معنوية: الطباق والمقابلة.</p><div class="g">${T.slice(3).map((o,j)=>`<button data-g="${j+3}">${o.t}<small>${o.c}</small></button>`).join('')}</div></div>${det('card tip','كيف تستعمل الصفحة؟','اقرأ التعريف، ثم اضغط على النوع في المشجرة، ثم على أجزاء المثال لتعرف دور كل كلمة. وقد تختلف مسميات بعض الأنواع بين المقررات؛ فاعتمد كتابك المدرسي إن خالفها هذا الشرح.')}`;
+else if(i>=T.length)h=`<h1>جدول المراجعة</h1><div class="card ov"><table><tr><th>الفن</th><th>العلامة المميّزة</th><th>مثال</th></tr>${REV.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</table></div>`;
+else{const o=T[i];h=`<h1>${o.t} <span class="pill">${o.c}</span></h1><div class="card">${o.d}</div>${o.x?`<div class="card"><b>اضغط على أجزاء المثال</b>${ex(o.x)}</div>`:''}<div class="card"><b>مشجرة ${o.t}: اضغط على النوع</b><div class="tree"><div class="rt">${o.t}</div>${kids(o.n,'data-p')}</div><div class="panel" id="pn"><p class="role">اختر نوعًا من المشجرة.</p></div></div>${det('tip','كيف أتعرف عليه في الاختبار؟',o.tip)}${det('err','خطأ شائع',o.e)}${o.cmp?`<div class="card ov"><b>${o.cmp.t}</b><table><tr>${o.cmp.h.map(x=>`<th>${x}</th>`).join('')}</tr>${o.cmp.r.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`:''}`}
+if(i>=0)h+=`<div class="nv">${i>0?`<button data-g="${i-1}">السابق</button>`:'<span></span>'}${i<T.length?`<button data-g="${i+1}">${i+1<T.length?'التالي':'المراجعة'}</button>`:''}</div>`;
+M.innerHTML=h;scrollTo(0,0)}
+function show(k,box){cn=k;box.innerHTML=nodeHtml(k)}
+M.addEventListener('click',e=>{const t=e.target.closest('[data-g],[data-p],[data-q],.pt');if(!t)return;
+if(t.dataset.g!=null)return go(+t.dataset.g);
+if(t.classList.contains('pt')){const w=t.closest('.exw');w.querySelectorAll('.pt').forEach(p=>p.classList.remove('on'));t.classList.add('on');w.querySelector('.role').textContent=t.textContent.trim()+' ← '+t.dataset.r;return}
+if(t.dataset.p!=null){document.querySelectorAll('[data-p]').forEach(b=>b.classList.toggle('on',b==t));return show(T[ci].n[+t.dataset.p],$('#pn'))}
+if(t.dataset.q!=null){const k=cn.k[+t.dataset.q];document.querySelectorAll('[data-q]').forEach(b=>b.classList.toggle('on',b==t));$('#sub').innerHTML=`<div class="panel">${nodeHtml(k)}</div>`}});
+M.addEventListener('keydown',e=>{if((e.key=='Enter'||e.key==' ')&&e.target.classList.contains('pt')){e.preventDefault();e.target.click()}});
+$('#nv').addEventListener('click',e=>{const t=e.target.closest('[data-g]');if(t)go(+t.dataset.g)});
+$('#th').onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=d?'light':'dark'};
+go(-1);
+</script></body></html>
